@@ -1,0 +1,39 @@
+
+[[_paths]]
+== 资源
+
+[[_system_resource]]
+=== System
+Test Controller
+
+
+[[_megusingget]]
+==== 根据用户id查询用户信息
+....
+GET /zz/meg
+....
+
+
+===== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|success|<<_testquery,TestQuery>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `application/json`
+
+
+

@@ -1,0 +1,21 @@
+package com.template;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.io.FileUtils;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.template.util.JacksonUtil;
+
+public class Test2 {
+	
+	private static final String login="232301fe47423230313631323139464d303030303101002510010108002f0001383938363036313630323030313939303532383501074a4d45564241549e";
+	
+	private static final String data="232302fe47423230313631323139464d303030303101007b3900000000070101030101980000294a0bb827d853012ed27a4c000201010166e4189bc5920bb827d80501000000000000000006010936bb010a3321010339010a0e0701000004000000000008010bb827d8000a0001000a75357530752b752d75337534752c753b75250000090101000a373839373839373839361a";	
+	public static void main(String[] args) throws Exception {
+		
+	}
+}

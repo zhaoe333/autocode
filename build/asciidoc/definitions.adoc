@@ -1,0 +1,33 @@
+
+[[_definitions]]
+== 定义
+
+[[_result]]
+=== Result
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**code** +
+__可选__|integer (int32)
+|**data** +
+__可选__|object
+|**message** +
+__可选__|string
+|**query** +
+__可选__|<<_testquery,TestQuery>>
+|===
+
+
+[[_testquery]]
+=== TestQuery
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**userId** +
+__必填__|integer (int32)
+|===
+
+
+
