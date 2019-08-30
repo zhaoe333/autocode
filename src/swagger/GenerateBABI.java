@@ -33,7 +33,7 @@ public class GenerateBABI {
 	
 	private static final Logger log = LoggerFactory.getLogger(GenerateBABI.class);
 	
-	private static final String jdbc_url = "jdbc:mysql://42.159.82.232:3306/benz_babi?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8";
+	private static final String jdbc_url = "jdbc:mysql://42.159.82.232:3306/benz_test?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8";
 
 	private static final String user_name = "benz"; //jdbc连接用户名
 
@@ -45,11 +45,11 @@ public class GenerateBABI {
 	//生成代码文件夹
 	private static final String basePath = "/Users/zyl_home/myswagger/";
 	//数据库名称
-	private static final String dbName = "benz_babi";
+	private static final String dbName = "benz_test";
 	//生成文件编码
 	private static String fileEncoding = "UTF-8";
 	//模板文件路径
-	private static String baseTemplatePath = "swagger";
+	private static String baseTemplatePath = "swagger2";
 	//作者（生成Class文件注解的作者信息）
 	private static String author = "zyl";
 	
@@ -68,7 +68,7 @@ public class GenerateBABI {
 			while(rs.next()){
 				TemplateTable table = new TemplateTable();
 				table.setTableName(rs.getString("table_name").toLowerCase());
-				if(!table.getTableName().contains("result")) {
+				if(!table.getTableName().contains("dim")) {
 					continue;
 				}
 				String comment = rs.getString("table_comment").toString().split(";")[0].trim();
