@@ -18,7 +18,7 @@
 		<jbpm.stable.version>5.4.0.Final</jbpm.stable.version>
 		<spring.data.version>1.7.1.RELEASE</spring.data.version>
 		<hamcrest.version>1.3</hamcrest.version>
-		<jackson-json.version>2.7.3</jackson-json.version>
+		<jackson-json.version>2.10.0</jackson-json.version>
 	</properties>
 	<dependencies>
 		<dependency>
