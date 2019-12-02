@@ -39,14 +39,14 @@ public class JDBCUtils {
 
 	private String jdbc_driver = "com.mysql.jdbc.Driver"; // jdbc驱动
 
-	private String jdbc_url = "jdbc:mysql://59.110.12.207:3306/monitor?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8";
+//	private String jdbc_url = "jdbc:mysql://59.110.12.207:3306/monitor?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8";
 //	private String jdbc_url = "jdbc:mysql://123.57.214.169:3306/test";
-//	private String jdbc_url = "jdbc:mysql://127.0.0.1:3306/jm_byd";
-	// //jdbc连接Url
+	private String jdbc_url = "jdbc:mysql://40.73.16.153:3308/honda_com?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true";
+	// //jdbc连接Urls
 
-	private String user_name = "root"; //jdbc连接用户名
+	private String user_name = "benz"; //jdbc连接用户名
 
-	private String user_password = "FM3.1415926"; //jdbc连接密码
+	private String user_password = "19GEg!Dai*923r12."; //jdbc连接密码
 
 	private String batch_size = "200000"; //批量提交数
 

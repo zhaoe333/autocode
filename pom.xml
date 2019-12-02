@@ -425,7 +425,7 @@
 		<repository>
 			<id>maven-repository-group</id>
 			<name> Maven Repository Group</name>
-			<url>http://101.201.108.36:8888/nexus/content/groups/public</url>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<layout>default</layout>
 			<releases>
 				<enabled>true</enabled>
