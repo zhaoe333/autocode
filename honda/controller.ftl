@@ -1,4 +1,4 @@
-﻿package ${packagePath}.${prex}.web;
+package ${packagePath}.${prex}.web;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -42,7 +42,7 @@ public class ${className} extends BaseController {
 
 	@Resource
 	private I${entityName}Service ${entityName?uncap_first}Service;
-	
+
 	/**
 	 * 新增${commentInfo}
 	 * @param ${entityName?uncap_first}Vo
@@ -52,12 +52,12 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("新增${commentInfo}")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "${commentInfo}id", response = String.class)})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "${required}", required = true),
 			@ApiImplicitParam(name = "${norequired}", required = false) })
 	@RequestMapping(value="/add",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody
-	public String add${entityName}(@ApiParam(value = "${commentInfo}信息", required = true)@RequestBody ${entityName}Vo ${entityName?uncap_first}Vo, 
+	public String add${entityName}(@ApiParam(value = "${commentInfo}信息", required = true)@RequestBody ${entityName}Vo ${entityName?uncap_first}Vo,
 			HttpServletRequest request) throws Exception{
 		<#if (requiredParams?length >2) >
 		if(!LogicUtil.checkBeanNullAndEmpty(${entityName?uncap_first}Vo,${requiredParams})){
@@ -70,10 +70,10 @@ public class ${className} extends BaseController {
 		${entityName} ${entityName?uncap_first}=${entityName?uncap_first}Service.save(${entityName?uncap_first}Vo);
 		return  response(${entityName?uncap_first}.getId());
 	}
-	
+
 	/**
 	 * 修改${commentInfo}
-	 * 
+	 *
 	 * @param ${entityName?uncap_first}Vo
 	 * @param request
 	 * @return
@@ -81,12 +81,12 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("修改${commentInfo}")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "${commentInfo}id", response = String.class)})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "$id", required = true),
 			@ApiImplicitParam(name = "${updateNames}", required = false) })
 	@RequestMapping(value="/update",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody
-	public String update${entityName}(@ApiParam(value = "${commentInfo}信息", required = true)@RequestBody ${entityName}Vo ${entityName?uncap_first}Vo,  
+	public String update${entityName}(@ApiParam(value = "${commentInfo}信息", required = true)@RequestBody ${entityName}Vo ${entityName?uncap_first}Vo,
 			HttpServletRequest request) throws Exception {
 		<#if idType=='INTEGER'>
 		if(LogicUtil.isNull(${entityName?uncap_first}Vo.getId())){
@@ -103,10 +103,10 @@ public class ${className} extends BaseController {
 		${entityName?uncap_first}Service.update(${entityName?uncap_first}Vo);
 		return response(${entityName?uncap_first}Vo.getId());
 	}
-	
+
 	/**
 	 * 删除${commentInfo}
-	 * 
+	 *
 	 * @param query
 	 * @param request
 	 * @return
@@ -114,7 +114,7 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("删除${commentInfo}")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "success", response = Void.class)})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "$id", required = true)})
 	@RequestMapping(value="/remove",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody
@@ -132,10 +132,10 @@ public class ${className} extends BaseController {
 		${entityName?uncap_first}Service.removeById(query.getId());
 		return response(null);
 	}
-	
+
 	/**
 	 * ${commentInfo}详情
-	 * 
+	 *
 	 * @param query
 	 * @param request
 	 * @return
@@ -143,7 +143,7 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("${commentInfo}详情")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "success", response = ${entityName}.class)})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "$id", required = true)})
 	@RequestMapping(value="/info",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody
@@ -161,7 +161,7 @@ public class ${className} extends BaseController {
 		${entityName} ${entityName?uncap_first}=${entityName?uncap_first}Service.getById(query.getId());
 		return response(${entityName?uncap_first});
 	}
-	
+
 	/**
 	 * 分页查询${commentInfo}列表
 	 * @param query
@@ -171,7 +171,7 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("分页查询${commentInfo}列表")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "${commentInfo}列表", response = ${entityName}.class,responseContainer = "list")})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "$", required = false)})
 	@RequestMapping(value="/pageQuery",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody
@@ -180,7 +180,7 @@ public class ${className} extends BaseController {
 		PageFinder<${entityName}> pageFinder = ${entityName?uncap_first}Service.queryPage(query);
 		return response(pageFinder);
 	}
-	
+
 	/**
 	 * 非分页查询${commentInfo}列表
 	 * @param query
@@ -190,7 +190,7 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("非分页查询${commentInfo}列表")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "${commentInfo}列表", response = ${entityName}.class,responseContainer = "list")})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "$", required = false)})
 	@RequestMapping(value="/query",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody
@@ -209,7 +209,7 @@ public class ${className} extends BaseController {
 	 */
 	@ApiOperation("校验${commentInfo}属性")
 	@ApiResponses(value ={@ApiResponse(code = 200, message = "校验结果", response = Void.class)})
-	@ApiImplicitParams({ 
+	@ApiImplicitParams({
 			@ApiImplicitParam(name = "${uniqueNames}", required = false)})
 	@RequestMapping(value="/check",method=RequestMethod.POST,consumes="application/json;charset=UTF-8")
 	@ResponseBody

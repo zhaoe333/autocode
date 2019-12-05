@@ -25,11 +25,11 @@ public class GenerateHonda {
 	
 	private static final Logger log = LoggerFactory.getLogger(GenerateHonda.class);
 	
-	private static final String jdbc_url = "jdbc:mysql://40.73.16.153:3308/honda_com?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8";
+	private static final String jdbc_url = "jdbc:mysql://40.73.40.151:3307/honda_com?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8";
 
-	private static final String user_name = "benz"; //jdbc连接用户名
+	private static final String user_name = "honda_com"; //jdbc连接用户名
 
-	private static final String user_password = "19GEg!Dai*923r12."; //jdbc连接密码
+	private static final String user_password = "honda&521@2020FM"; //jdbc连接密码
 	
 	private static final String tableNamePrefix="honda_";
 	
