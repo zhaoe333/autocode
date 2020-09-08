@@ -29,6 +29,9 @@ public class TemplateColumn {
 	private String jdbcName;
 	//0唯一约束 1无唯一约束
 	private byte unique;
+	//无效值
+	private String invalidValue;
+
 	public TemplateColumn() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -114,6 +117,17 @@ public class TemplateColumn {
 
 	public void setJdbcName(String jdbcName) {
 		this.jdbcName = jdbcName;
+		switch(this.jdbcName){
+			case "INTEGER":
+			case "BIGINT":
+				this.invalidValue="-1";
+				break;
+			case "DOUBLE":
+				this.invalidValue="-1.0";
+				break;
+			default:
+				this.invalidValue= "''";
+		}
 	}
 	
 	public byte getUnique() {
@@ -122,6 +136,14 @@ public class TemplateColumn {
 
 	public void setUnique(byte unique) {
 		this.unique = unique;
+	}
+
+	public String getInvalidValue() {
+		return invalidValue;
+	}
+
+	public void setInvalidValue(String invalidValue) {
+		this.invalidValue = invalidValue;
 	}
 
 	@Override
